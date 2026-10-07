@@ -1,0 +1,167 @@
+:root {
+  font-family: "Yu Gothic UI", Meiryo, sans-serif;
+  color: #263238;
+  background: #fff;
+  font-size: 16px;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  display: flex;
+  height: 100vh;
+}
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+button {
+  cursor: pointer;
+  background: #eef1f4;
+  border: 1px solid #cbd2d8;
+  border-radius: 5px;
+  padding: 8px 12px;
+  color: inherit;
+}
+button:hover {
+  background: #e1e7ed;
+}
+input,
+select {
+  border: 1px solid #cbd2d8;
+  border-radius: 5px;
+  padding: 9px;
+  background: white;
+  min-width: 0;
+}
+input:focus,
+textarea:focus,
+button:focus-visible,
+select:focus {
+  outline: 2px solid #4474ab;
+  outline-offset: 1px;
+}
+aside {
+  width: 310px;
+  flex-shrink: 0;
+  padding: 20px 16px;
+  background: #f6f7f9;
+  border-right: 1px solid #dce0e5;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+h1 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+#new-task {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+#list {
+  overflow: auto;
+  flex: 1;
+}
+.row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #e0e4e8;
+  padding: 6px;
+  border-radius: 5px;
+}
+.row.active {
+  background: #e3edf8;
+}
+.row input {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+.task-select {
+  background: transparent;
+  border: 0;
+  text-align: left;
+  flex: 1;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.done .task-name {
+  color: #717b84;
+  text-decoration: line-through;
+}
+.task-date {
+  display: block;
+  font-size: 12px;
+  color: #67727d;
+  margin-top: 4px;
+}
+main {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+}
+#editor {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+}
+header {
+  display: flex;
+  gap: 14px;
+}
+#title {
+  font-size: 22px;
+  font-weight: 600;
+  flex: 1;
+}
+#delete {
+  color: #a73434;
+}
+#dates {
+  font-size: 13px;
+  color: #68737e;
+}
+textarea {
+  flex: 1;
+  resize: none;
+  border: 1px solid #dce0e5;
+  border-radius: 5px;
+  padding: 16px;
+  line-height: 1.75;
+  min-height: 120px;
+  color: inherit;
+}
+footer {
+  font-size: 12px;
+  color: #65717c;
+  margin-top: 14px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+#path {
+  overflow-wrap: anywhere;
+}
+#empty {
+  margin: auto;
+  color: #68737e;
+}
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+[hidden] {
+  display: none !important;
+}

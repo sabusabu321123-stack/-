@@ -1,0 +1,44 @@
+{
+  "name": "task-text-editor",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ローカルで使うタスク管理とテキストエディタ",
+  "main": "dist/main.js",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "build": "tsc && node scripts/copy.mjs",
+    "start": "npm run build && electron .",
+    "test": "npm run build && node --test tests/*.test.cjs",
+    "test:ui": "npm run build && node tests/ui.cjs",
+    "test:electron": "npm run build && node tests/electron.cjs",
+    "package:win": "npm run build && electron-builder --win nsis",
+    "package:win:zip": "npm run build && electron-builder --win zip"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "electron": "^42.0.0",
+    "electron-builder": "^26.0.0",
+    "playwright": "^1.58.0",
+    "typescript": "^5.9.0"
+  },
+  "build": {
+    "appId": "local.tasktext.editor",
+    "productName": "Task Text Editor",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "dist/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
