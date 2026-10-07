@@ -94,4 +94,4 @@ git add .
 git commit -m "Implement local task and text editor"
 ```
 
-この作業ではコミット・プッシュを自動実行していません。
+`v1.0.0` のようなバージョンタグをGitHubへpushすると、`.github/workflows/release.yml` がWindows上で保存テストとZIPビルドを実行し、GitHub Releasesへ配置します。公開状態はGitHub Actionsの結果とReleasesのAssetsで確認できます。
